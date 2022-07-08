@@ -1,0 +1,10 @@
+<section class="newsletter-container">
+  <form action="" class="newsletter-form">
+    {% csrf_token %}
+    <p>Subscribe to my newsletter</p>
+    <div class="input-group">
+      {{form.email}}
+      <input class="btn text-uppercase" type="submit" value="Subscribe" />
+    </div>
+  </form>
+</section>
