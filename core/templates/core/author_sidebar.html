@@ -1,0 +1,20 @@
+<aside class="author-sidebar padded">
+
+  <img class="author-avatar" src="{{author.profile_image.url}}" alt="{{author.profile_image_description}}" />
+  <p class="author-copy">
+    {% if type == 'event' %}
+    <span>Meet</span>
+    <span class="author">{{author.name}}</span>
+    <span>on tour for</span>
+    {% elif type == 'news' %}
+    {% endif %}
+    <a class="featured-book-link" href="{{ book.get_absolute_url }}">
+      {{ book.title }}
+    </a>
+  </p>
+
+  <a class="book-image-link" href="{{ book.get_absolute_url }}">
+    {% include 'catalog/book_image.html' %}
+  </a>
+
+</aside>

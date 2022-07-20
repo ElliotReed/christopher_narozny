@@ -1,7 +1,7 @@
 // ========== Retractable Header ==========
 // Store navbar classes
-const navHeader = document.querySelector(".page-header");
-const navClasses =navHeader.classList;
+const navHeader = document.querySelector(".site-header");
+const navClasses = navHeader.classList;
 
 function homeAction() {
   return

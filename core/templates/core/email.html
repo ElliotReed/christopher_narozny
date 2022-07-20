@@ -1,13 +1,30 @@
 <html>
 
-<body
-  style="font-family: Arial, sans-serif; font-size: 18px; background-color: rgb(237, 237, 232); color:rgb(18, 18, 23);">
-  <header style="background-color: rgb(17, 136, 191); color: rgb(237, 237, 232); padding: 20px;">From the website of
-    Christopher Narozny</header>
-  <p>You have a new message from {{message.name}}</p>
-  <p>Email: {{message.sender}}</p>
-  <br>
-  <p>{{message.message}}</p>
+<body style=" font-family: Arial,
+              sans-serif;
+              font-size: 18px;
+              background-color: hsl(26, 17%, 92%);
+              color:hsl(26, 17%, 8%);
+              margin: 0;
+">
+
+  <header style=" background-color: hsl(200, 85%, 40%);
+                  color: hsl(26, 17%, 92%);
+                  padding: 20px;
+  ">
+    From the website of Chris Narozny
+  </header>
+
+  <main style="padding: 18px;">
+
+    <p>You have a new message from <strong>{{message.name}}</strong></p>
+
+    <br>
+
+    <p>{{message.message}}</p>
+
+  </main>
+
 </body>
 
 </html>

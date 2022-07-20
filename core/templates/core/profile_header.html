@@ -1,0 +1,8 @@
+<header class="profile padded">
+  <img class="profile-image" src="{{author.profile_image.url}}" alt="{{author.profile_image_description}}" />
+  <p class="profile-text clearfix">
+    {% if show_about_text %}
+    {{author.about_text}}
+    {% endif %}
+  </p>
+</header>

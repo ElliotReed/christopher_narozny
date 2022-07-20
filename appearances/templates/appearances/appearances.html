@@ -1,43 +1,117 @@
 {% extends 'base.html' %}
 
+{% block title%}Events |
+{% endblock title%}
+
 {% block content %}
 
-<h1>Appearances</h1>
+<h1 class="hidden">Events</h1>
 
-<section class="appearance" book signing>
-  <p><time datetime="">April 28th</p>
-  <!-- set time -->
-  <p><time datetime="">8:00 pm</p>
-  <a href="">Tattered Cover Bookstore</a>
-  <p>17 Colfax Avenue, Denver, CO 80210</p>
-</section>
+<div class="paper">
+  <div class="container padded sidebar-container">
 
-<section class="appearance" facebook instagram>
-  <p><time datetime="">April 28th</p>
-  <!-- local time -->
-  <p><time datetime="">8:00 pm</p>
-  <p>Live with Somebody</p>
+    {% include 'core/author_sidebar.html' with type='event' %}
 
-  <a href="https://www.facebook.com">Facebook</a>
-</section>
+    <div>
+      {% for appearance in appearances %}
+      {% with type=appearance.appearance_type.appearance_type %}
 
-<section class="appearance" IN CONVERSATION WITH>
-  <p>In Conversation with Laird Hunt</p>
-  <p><time datetime="">April 28th</p>
-  <!-- set time -->
-  <p><time datetime="">8:00 pm</p>
-  <a href="">Tattered Cover Bookstore</a>
-  <p>17 Colfax Avenue, Denver, CO 80210</p>
-</section>
+      {% if type == 'Book signing' %}
+      <section class="info-item text-tight-spacing">
 
-<section class="appearance" CONFERENCE>
-  <h2>THRILLERFEST</h2>
-  <p>Echoing Current Events, with panelists First Last, First Last, and First Last
-  </p>
-  <!-- set time -->
-  <p><time datetime="">Sunday July 3, 3:00 pm</p>
-  <p>Sheraton Hotel, Times Square</p>
-  <a href="">Thrillerfest.com</a>
-</section>
+        <h2 class="type-heading">{{type}}</h2>
+        <p class="date">
+          <time datetime="{{appearance.date}}">
+            {{appearance.date|date:"l, F j, Y"}}
+        </p>
+        <p class="time">
+          <time datetime="{{appearance.time}}">
+            {{appearance.time}}
+        </p>
+        <p class="venue">
+          <a href="{{appearance.venue_link}}">
+            {{appearance.venue_name}}
+          </a>
+        </p>
+        <p>{{appearance.venue_address}}</p>
 
+      </section>
+
+      {% elif type == 'Facebook live' or type == 'Instagram live' %}
+      <section class="info-item text-tight-spacing">
+
+        <h2 class="type-heading">{{type}}</h2>
+        <p class="date">
+          <time datetime="{{appearance.date}}">
+            {{appearance.date|date:"l, F j, Y"}}
+        </p>
+        <p class="time">
+          <time datetime="{{appearance.time}}">
+            {{appearance.time}}
+        </p>
+        <p>Live with
+          <a class="host" href="{{appearance.host_link}}">{{appearance.host_name}}
+          </a>
+        </p>
+
+      </section>
+
+      {% elif type == 'In conversation with' %}
+      <section class="info-item text-tight-spacing">
+
+        <h2 class="type-heading">{{type}}</h2>
+        <p class="date">
+          <time datetime="{{appearance.date}}">
+            {{appearance.date|date:"l, F j, Y"}}
+        </p>
+        <p class="time">
+          <time datetime="{{appearance.time}}">
+            {{appearance.time}}
+        </p>
+        <p>In conversation with
+          <a class="host" href="{{appearance.host_link}}">{{appearance.host_name}}
+
+          </a>
+        </p>
+        <p class="venue">
+          <a href="{{appearance.venue_link}}">
+            {{appearance.venue_name}}
+          </a>
+        </p>
+        <p>{{appearance.venue_address}}</p>
+      </section>
+
+      {% elif type == 'Conference' %}
+      <section class="info-item text-tight-spacing">
+
+        <h2 class="type-heading">{{type}}</h2>
+        <p class="date">
+          <time datetime="{{appearance.date}}">
+            {{appearance.date|date:"l, F j, Y"}}
+        </p>
+        <p class="time">
+          <time datetime="{{appearance.time}}">
+            {{appearance.time}}
+        </p>
+        <h3 class="conference">
+          <a href="{{appearance.conference_link}}">
+            {{appearance.conference_name}}
+          </a>
+        </h3>
+        <p>{{appearance.appearence_details}}</p>
+        <p class="venue">
+          <a href="{{appearance.venue_link}}">
+            {{appearance.venue_name}}
+          </a>
+        </p>
+        <p>{{appearance.venue_address}}</p>
+      </section>
+
+      {% endif %}
+
+      {% endwith %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
 {% endblock content %}

@@ -129,3 +129,5 @@ user.txt
 sqldiff.exe
 sqlite3_analyzer.exe
 sqlite3.exe
+_resources
+/staticfiles

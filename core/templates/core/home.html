@@ -1,29 +1,26 @@
 {% extends 'base.html' %}
+
 {% load static %}
 
 {% block content %}
+
 <section class="hero">
   <div class="hero-inner ">
 
-    <section class="book-container">
-      <div class="book">
-        <picture>
-          <source srcset="{% static 'images/not_by_blood-lg.jpg' %}" media="(min-width: 800px)">
-          <img src="{% static 'images/not_by_blood-sm.jpg' %}" />
-        </picture>
-      </div>
-    </section>
+    <a class="book-image-link" href="{{ book.get_absolute_url }}">
+      {% include 'catalog/book_image.html' %}
+    </a>
 
     <section class="cta-container">
-      <h1 class="text-uppercase">Not By Blood</h1>
-      <a class="btn text-uppercase" href="{% url 'catalog:catalog' %}">Order Now</a>
+      <h1 class="cta-heading text-uppercase">Not By Blood</h1>
+      <a class="cta-button btn text-uppercase" href="{{ book.get_absolute_url }}">
+        Order Now
+      </a>
     </section>
 
   </div>
 </section>
 
-
-{% include 'core/newsletter-signup.html' %}
-
+{% include 'core/newsletter_subscribe.html' %}
 
 {% endblock content %}

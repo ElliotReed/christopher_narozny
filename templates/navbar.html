@@ -1,27 +1,43 @@
-<header class="page-header">
+<header class="site-header">
 
-  <a class="logo text-uppercase" href="{% url 'core:home' %}">Christopher Narozny</a>
+  <a class="logo text-uppercase" href="{% url 'core:home' %}">Chris Narozny</a>
 
   <nav class="nav">
-    <a class="link" href="{% url 'core:home' %}">Home</a>
-    <a class="link" href="{% url 'catalog:catalog' %}">Books</a>
-    <a class="link" href="{% url 'core:newsletter' %}">Newsletter</a>
-    <a class="link" href="{% url 'appearances:appearances' %}">Appearances</a>
-    <a class="link" href="{% url 'news:news' %}">News</a>
-    <a class="link" href="{% url 'core:about' %}">About</a>
-    <a class="link" href="{% url 'core:contact' %}">Contact</a>
-  </nav>
+    {% with request.resolver_match.url_name as url_name %}
+    <ul>
 
+      <li class="{% if url_name == 'home' %}active{% endif %} hide-for-small">
+        <a class="link" href="{% url 'core:home' %}">Home</a>
+      </li>
+
+      <li class="{% if url_name == 'catalog' %}active{% endif %}">
+        <a class="link" href="{% url 'catalog:catalog' %}">Books</a>
+      </li>
+
+      <li class="{% if url_name == 'newsletter' %}active{% endif %}">
+        <a class="link" href="{% url 'core:newsletter' %}">Newsletter</a>
+      </li>
+
+      <li class="{% if url_name == 'appearances' %}active{% endif %}">
+        <a class="link" href="{% url 'appearances:appearances' %}">Events</a>
+      </li>
+
+      <li class="{% if url_name == 'news' %}active{% endif %}">
+        <a class="link" href="{% url 'news:news' %}">News</a>
+      </li>
+
+      <li class="{% if url_name == 'about' %}active{% endif %}">
+        <a class="link" href="{% url 'core:about' %}">About</a>
+      </li>
+
+      <li class="{% if url_name == 'contact' %}active{% endif %}">
+        <a class="link" href="{% url 'core:contact' %}">Contact</a>
+      </li>
+
+    </ul>
+    {% endwith %}
+  </nav>
 
 </header>
 
 <div js-header-spacer></div>
-
-<div class="social-links">
-  <a href="https://github.com/ElliotReed" title="Github">
-    <!-- <img src="assets/images/github-128.png" alt="Github" class="icon"> -->
-  </a>
-  <a href="https://www.linkedin.com/in/elliot-reed-a5255b153/" title="LinkedIn">
-    <!-- <img src="assets/images/linkedin-128.png" alt="LinkedIn" class="icon"> -->
-  </a>
-</div>

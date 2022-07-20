@@ -8,6 +8,6 @@ class ContactForm(forms.Form):
 
 
 class NewsletterForm(forms.Form):
-    email = forms.EmailField(
+    subscriber_email = forms.EmailField(
         widget=forms.EmailInput(attrs={"placeholder": "jane@example.com"})
     )

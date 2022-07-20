@@ -1,15 +1,31 @@
-<footer class="page-footer">
+{% load static %}
 
-  <p>&copy; <span id="copyright"></span>&nbsp;Christopher Narozny</p>
-  <p>site by <a href='elliotreed.net/developer'>Elliot Reed</a></p>
+<footer class="site-footer">
 
-  <div class="social-links">
-    <a href="https://github.com/ElliotReed" title="Github">
-      <!-- <img src="assets/images/github-128.png" alt="Github" class="icon"> -->
+  <section>
+    <p>
+      &copy;<span id="copyright"></span>&nbsp;Chris Narozny
+    </p>
+    <p>
+      Website by
+      <a class="dev-link" href='https://elliotreed.net/developer' title="Elliot Reed website" target="_blank">
+        Elliot Reed
+      </a>
+    </p>
+  </section>
+
+  <section class="social-links">
+    <a class="social-link" href="https://www.facebook.com/Chris-Narozny-102930035831343" title="Facebook"
+      target="_blank">
+      <img src="{% static 'images/' %}facebook.svg" alt="Facebook" class="icon">
     </a>
-    <a href="https://www.linkedin.com/in/elliot-reed-a5255b153/" title="LinkedIn">
-      <!-- <img src="assets/images/linkedin-128.png" alt="LinkedIn" class="icon"> -->
+    <a class="social-link" href="https://www.goodreads.com/author/show/22484825.Chris_Narozny" title="Goodreads"
+      target="_blank">
+      <img src="{% static 'images/' %}goodreads.svg" alt="Goodreads" class="icon">
     </a>
-  </div>
+    <a class="social-link" href="https://twitter.com/cnarozny1" title="Twitter" target="_blank">
+      <img src="{% static 'images/' %}twitter.svg" alt="Twitter" class="icon">
+    </a>
+  </section>
 
 </footer>

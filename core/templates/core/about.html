@@ -1,10 +1,111 @@
 {% extends 'base.html' %}
 
-{% block title%}
+{% block title%}About |
 {% endblock title%}
 
 {% block content %}
 
-<h1>About</h1>
+<h1 class="hidden">About</h1>
+
+<section class="about container padded">
+
+  {% include 'core/profile_header.html' with show_about_text=True %}
+
+  <br>
+
+  <main class="about-main padded paper">
+
+    <br>
+
+    <section class="text-tight-spacing">
+      <h2>
+        Not by Blood is your third novel but your first psychological thriller. What attracted you to the genre?
+      </h2>
+
+      <p>
+        It was a natural progression. Jonah Man, my first novel, is literary fiction, but the final section is told from
+        the
+        perspective of a detective. The Exiled is a noir, hardboiled detective novel. And Not by Blood is, like most
+        psychological thrillers, the story of a civilian who’s forced to play the role of detective. The “psychological”
+        piece is what really drew me to the genre. In NBB, Tina, the protagonist, is trying to solve a mystery, but
+        she’s
+        also trying to “solve” her brother’s trauma, her husband’s trauma, her own trauma—all while protecting her young
+        son
+        from events that are likely to traumatize him. Psychological thrillers generally require some suspension of
+        disbelief, but at their core they mirror real life.
+      </p>
+    </section>
+
+    <br>
+
+    <section>
+      <h2>
+        Tell us about your day job.
+      </h2>
+
+      <p>
+        I’m officially a ghostwriter now. The career shift (I’d been teaching) happened by accident. I published The
+        Exiled
+        at
+        a time when James Patterson was looking for writers to staff his novella-length Bookshots series. My editor knew
+        his
+        editor. I wound up writing three of the novellas, plus one full-length novel. From there, I was able to sign up
+        with
+        an agency that specializes in ghostwriting. I really love it. I work with people I’d never meet otherwise (to
+        date:
+        an
+        actor, a rock star, a restaurateur, and a retired lawyer who happens to be the brother of a famous author).
+      </p>
+    </section>
+
+    <br>
+    <section>
+      <h2>
+        If you had to name one writer who has influenced you, who would you pick?
+      </h2>
+
+      <p>
+        John Banville. I think he’s one of the greatest living prose writers, but, more practically, I wouldn’t be
+        writing
+        genre fiction if it weren’t for him. He writes a mystery series under the penname Benjamin Black (or did—he
+        recently
+        dropped the pseudonym). I stumbled on an interview where he said something like: “If I knew Benjamin Black could
+        have
+        supported John Banville, I would have started thirty years ago.” I grew up reading Raymond Chandler and Dashiell
+        Hammett, so I figured I might as well give it a shot.
+      </p>
+    </section>
+
+    <br>
+
+    <section>
+      <h2>
+        If you weren’t a writer, you’d be…
+      </h2>
+
+      <p>
+        Nothing practical. If I had my choice, probably a musician. Music gets you out of your own head while writing
+        pushes
+        you deeper inside.
+      </p>
+    </section>
+
+    <br>
+
+    <section>
+      <h2>
+        Last show you binge watched?
+      </h2>
+
+      <p>
+        Barry. It’s brilliant. It bounces effortlessly between slapstick, action, and high drama. And it seems like
+        everyone
+        involved is having a blast.
+      </p>
+    </section>
+
+  </main>
+
+</section>
 
 {% endblock content %}
