@@ -2,6 +2,13 @@
 * Prefixed by https://autoprefixer.github.io
 * PostCSS: v8.4.14,
 * Autoprefixer: v10.4.7
+* Browsers: last 2 version,>1%
+*/
+
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
 * Browsers: last 4 version
 */
 
@@ -228,6 +235,26 @@ textarea {
   border-radius: var(--border-radius);
   background: var(--clr-neutral-100);
   padding: var(--padding-box);
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  opacity: .5;
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  opacity: .5;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  opacity: .5;
+}
+
+input::-ms-input-placeholder,
+textarea::-ms-input-placeholder {
+  opacity: .5;
 }
 
 input::-webkit-input-placeholder,
@@ -552,7 +579,6 @@ textarea:focus {
   width: var(--book-width);
   height: var(--book-height);
   -webkit-transition: var(--duration-lg) ease;
-  -o-transition: var(--duration-lg) ease;
   transition: var(--duration-lg) ease;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
@@ -613,28 +639,6 @@ textarea:focus {
       color-stop(90%, #fff),
       color-stop(95%, #aaa),
       to(#fff));
-  background: -o-linear-gradient(left,
-      #fff 0%,
-      #aaa 5%,
-      #fff 10%,
-      #aaa 15%,
-      #fff 20%,
-      #aaa 25%,
-      #fff 30%,
-      #aaa 35%,
-      #fff 40%,
-      #aaa 45%,
-      #fff 50%,
-      #aaa 55%,
-      #fff 60%,
-      #aaa 65%,
-      #fff 70%,
-      #aaa 75%,
-      #fff 80%,
-      #aaa 85%,
-      #fff 90%,
-      #aaa 95%,
-      #fff 100%);
   background: linear-gradient(90deg,
       #fff 0%,
       #aaa 5%,
@@ -696,8 +700,8 @@ textarea:focus {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap-reverse;
+  flex-wrap: wrap-reverse;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
@@ -708,25 +712,37 @@ textarea:focus {
   padding: var(--padding-box);
 }
 
+.design-credit {
+  font-size: var(--fs-sm);
+}
+
 .dev-link:hover,
 .dev-link:focus {
   color: var(--blue-500);
+}
+
+.footer-credits {
+  margin-right: var(--spacer);
+}
+
+.social-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: var(--spacer);
 }
 
 .social-link .icon {
   --icon-size: 2rem;
   width: var(--icon-size);
   height: var(--icon-size);
-  margin-left: var(--spacer);
   -webkit-transition: all var(--duration-sm) ease;
-  -o-transition: all var(--duration-sm) ease;
   transition: all var(--duration-sm) ease;
 }
 
 .social-link .icon:hover,
 .social-link:focus img {
   -webkit-transform: scale(1.25);
-  -ms-transform: scale(1.25);
   transform: scale(1.25);
 }
 
@@ -755,7 +771,6 @@ textarea:focus {
   bottom: 0px;
   left: 0px;
   background: -webkit-gradient(linear, left top, left bottom, from(var(--clr-neutral-900)), color-stop(rgb(0 0 18 /.5)), to(var(--clr-neutral-900)));
-  background: -o-linear-gradient(top, var(--clr-neutral-900), rgb(0 0 18 /.5), var(--clr-neutral-900));
   background: linear-gradient(to bottom, var(--clr-neutral-900), rgb(0 0 18 /.5), var(--clr-neutral-900));
 }
 
@@ -890,7 +905,6 @@ textarea:focus {
 .nav ul li {
   border-bottom: 3px solid transparent;
   -webkit-transition: all .15s ease-in-out;
-  -o-transition: all .15s ease-in-out;
   transition: all .15s ease-in-out;
 }
 
@@ -1043,7 +1057,6 @@ textarea:focus {
   -webkit-box-shadow: var(--box-shadow);
   box-shadow: var(--box-shadow);
   -webkit-transition: all .15s ease-in-out;
-  -o-transition: all .15s ease-in-out;
   transition: all .15s ease-in-out;
 }
 
@@ -1132,6 +1145,8 @@ textarea:focus {
 /* #endregion Utility styles */
 
 /* #region Animations */
+
+
 @-webkit-keyframes fade-in {
   0% {
     opacity: 0;
@@ -1145,6 +1160,7 @@ textarea:focus {
     transform: scale3d(1, 1, 1);
   }
 }
+
 
 @keyframes fade-in {
   0% {

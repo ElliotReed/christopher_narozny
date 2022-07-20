@@ -12,6 +12,7 @@
 
     {% include 'core/author_sidebar.html' with type='news' %}
 
+    {% if news %}
     <div>
       {% for newsitem in news %}
       {% with type=newsitem.item_type.item_type %}
@@ -56,6 +57,12 @@
       {% endwith %}
       {% endfor %}
     </div>
+
+    {% else %}
+
+    <p class="padded">There are no news items, check back soon for the latest news.</p>
+
+    {% endif %}
   </div>
 </div>
 {% endblock content %}

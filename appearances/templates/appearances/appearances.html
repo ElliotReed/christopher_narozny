@@ -12,6 +12,7 @@
 
     {% include 'core/author_sidebar.html' with type='event' %}
 
+    {% if appearances %}
     <div>
       {% for appearance in appearances %}
       {% with type=appearance.appearance_type.appearance_type %}
@@ -112,6 +113,12 @@
       {% endwith %}
       {% endfor %}
     </div>
+
+    {% else %}
+
+    <p class="padded">There are no events scheduled, check back soon for upcoming events.</p>
+
+    {% endif %}
   </div>
 </div>
 {% endblock content %}
