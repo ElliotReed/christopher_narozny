@@ -40,7 +40,6 @@ class Book(models.Model):
 
     def get_featured_blurb(self):
         print(Blurb.objects.filter(book=self.pk, featured=True))
-        # return Blurb.objects.filter(book=self.pk, featured=True)[0]
         return Blurb.objects.filter(book=self.pk, featured=True)
 
 

@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+{% block title%}Events |
+{% endblock title%}
+
+{% block content %}
+
+  <h1 class="hidden">Events</h1>
+
+  <div class="paper">
+    <div class="container padded sidebar-container">
+      {% include 'core/author_sidebar.html' with type='event' %}
+
+      <div>
+        {% with type=appearance.appearance_type.appearance_type %}
+
+        {% if type == 'Book signing' %}
+          <section class="info-item text-tight-spacing">
+            <h2 class="type-heading">{{type}}</h2>
+
+            {% include "appearances/appearance_date.html" %}
+
+            {% include "appearances/appearance_time.html" %}
+
+            {% include "appearances/appearance_venue.html" %}
+
+            <br>
+
+            <p>{{appearance.appearance_details}}</p>
+          </section>
+
+          {% elif type == 'Facebook live' or type == 'Instagram live' %}
+            <section class="info-item text-tight-spacing">
+              <h2 class="type-heading">{{type}}</h2>
+
+              {% include "appearances/appearance_date.html" %}
+
+              {% include "appearances/appearance_time.html" %}
+
+              <p>Live with
+                <a class="host" href="{{appearance.host_link}}">{{appearance.host_name}}
+                </a>
+              </p>
+
+              <br>
+
+              <p>{{appearance.appearance_details}}</p>
+            </section>
+
+          {% elif type == 'In conversation with' %}
+            <section class="info-item text-tight-spacing">
+              <h2 class="type-heading">{{type}}</h2>
+
+              {% include "appearances/appearance_date.html" %}
+
+              {% include "appearances/appearance_time.html" %}
+
+              <p>In conversation with
+                <a class="host" href="{{appearance.host_link}}">
+                  {{appearance.host_name}}
+                </a>
+              </p>
+
+              {% include "appearances/appearance_venue.html" %}
+
+              <br>
+
+              <p>{{appearance.appearance_details}}</p>
+            </section>
+
+          {% elif type == 'Conference' %}
+            <section class="info-item text-tight-spacing">
+              <h2 class="type-heading">{{type}}</h2>
+
+              {% include "appearances/appearance_date.html" %}
+
+              {% include "appearances/appearance_time.html" %}
+
+              <h3 class="conference">
+                <a href="{{appearance.conference_link}}">
+                  {{appearance.conference_name}}
+                </a>
+              </h3>
+
+              {% include "appearances/appearance_venue.html" %}
+
+              <br>
+
+              <p>{{appearance.appearance_details}}</p>
+            </section>
+          {% endif %}
+        {% endwith %}
+      </div>
+    </div>
+  </div>
+{% endblock content %}

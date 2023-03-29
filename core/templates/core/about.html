@@ -7,15 +7,13 @@
 
 <h1 class="hidden">About</h1>
 
-<section class="about container padded">
+<div class="about container padded">
 
   {% include 'core/profile_header.html' with show_about_text=True %}
 
   <br>
 
-  <main class="about-main padded paper">
-
-    <br>
+  <div class="about-main padded paper">
 
     <section class="text-tight-spacing">
       <h2>
@@ -59,6 +57,7 @@
     </section>
 
     <br>
+
     <section>
       <h2>
         If you had to name one writer who has influenced you, who would you pick?
@@ -104,8 +103,8 @@
       </p>
     </section>
 
-  </main>
+  </div>
 
-</section>
+</div>
 
 {% endblock content %}

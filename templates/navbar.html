@@ -1,11 +1,10 @@
 <header class="site-header">
-
   <a class="logo text-uppercase" href="{% url 'core:home' %}">Chris Narozny</a>
 
   <nav class="nav">
     {% with request.resolver_match.url_name as url_name %}
-    <ul>
 
+    <ul>
       <li class="{% if url_name == 'home' %}active{% endif %} hide-for-small">
         <a class="link" href="{% url 'core:home' %}">Home</a>
       </li>
@@ -33,11 +32,10 @@
       <li class="{% if url_name == 'contact' %}active{% endif %}">
         <a class="link" href="{% url 'core:contact' %}">Contact</a>
       </li>
-
     </ul>
+
     {% endwith %}
   </nav>
-
 </header>
 
-<div js-header-spacer></div>
+<div data-header-spacer></div>

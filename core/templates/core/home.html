@@ -4,22 +4,21 @@
 
 {% block content %}
 
-<section class="hero">
+<div class="hero">
   <div class="hero-inner ">
-
     <a class="book-image-link" href="{{ book.get_absolute_url }}">
       {% include 'catalog/book_image.html' %}
     </a>
 
     <section class="cta-container">
       <h1 class="cta-heading text-uppercase">Not By Blood</h1>
-      <a class="cta-button btn text-uppercase" href="{{ book.get_absolute_url }}">
+
+      <a class="btn cta-button text-uppercase" href="{{ book.get_absolute_url }}">
         Order Now
       </a>
     </section>
-
   </div>
-</section>
+</div>
 
 {% include 'core/newsletter_subscribe.html' %}
 

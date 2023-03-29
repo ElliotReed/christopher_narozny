@@ -1,0 +1,5 @@
+{% if appearance.appearance_details %}
+  <a class="appearance-link" href="{% url "appearances:appearance_detail" appearance.slug %}">
+    More
+  </a>
+{% endif %}

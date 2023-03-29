@@ -1,4 +1,5 @@
-// ========== Retractable Header ==========
+// #region Retractable Header
+//  ========== Retractable Header ==========
 // Store navbar classes
 const navHeader = document.querySelector(".site-header");
 const navClasses = navHeader.classList;
@@ -18,17 +19,17 @@ function upAction() {
 }
 
 // returns current scroll position
-var scrollTop = function () {
+const scrollTop = function () {
   return window.scrollY;
 };
 
 // Initial scroll position
-var scrollState = 0;
+let scrollState = 0;
 
 // Primary scroll event function
-var scrollDetect = function (home, down, up) {
+const scrollDetect = function (home, down, up) {
   // Current scroll position
-  var currentScroll = scrollTop();
+  const currentScroll = scrollTop();
   if (scrollTop() === 0) {
     home();
   } else if (currentScroll > scrollState) {
@@ -43,10 +44,10 @@ var scrollDetect = function (home, down, up) {
 window.addEventListener("scroll", function () {
   scrollDetect(homeAction, downAction, upAction);
 });
-// ========== end Retractable Header ==========
+//  ========== end Retractable Header ==========
 
 // ========== add space to make up for the header size ==========
-const navSpacer = document.querySelector('[js-header-spacer]');
+const navSpacer = document.querySelector('[data-header-spacer]');
 
 function setSpacer(navElement) {
   navSpacer.style.height = navElement.offsetHeight + 'px';
@@ -54,6 +55,7 @@ function setSpacer(navElement) {
 
 setSpacer(navHeader);
 // ========== add space to make up for the header size ==========
+// #endregion Retractable Header
 
 // set year for copyright
 const copyright = document.getElementById('copyright');

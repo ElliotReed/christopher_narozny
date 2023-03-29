@@ -9,7 +9,43 @@ class NewsItemAdmin(admin.ModelAdmin):
         "article",
         "host_name",
         "podcast",
-        "publisher",
+    )
+    fieldsets = (
+        (
+            None,
+            {
+                "fields": ("item_type", "order", "description"),
+            },
+        ),
+        (
+            "For print articles",
+            {
+                "fields": (
+                    "article",
+                    "article_link",
+                    "publisher",
+                    "publisher_link",
+                ),
+            },
+        ),
+        (
+            "For Blog or Youtube",
+            {
+                "fields": (
+                    "host_name",
+                    "host_link",
+                ),
+            },
+        ),
+        (
+            "For Podcast",
+            {
+                "fields": (
+                    "podcast",
+                    "podcast_link",
+                ),
+            },
+        ),
     )
 
 

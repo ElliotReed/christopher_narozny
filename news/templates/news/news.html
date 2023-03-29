@@ -4,65 +4,66 @@
 {% endblock title%}
 
 {% block content %}
+  <h1 class="hidden">News</h1>
 
-<h1 class="hidden">News</h1>
+  <div class="paper">
+    <div class="container padded sidebar-container">
 
-<div class="paper">
-  <div class="container padded sidebar-container">
+      {% include 'core/author_sidebar.html' with type='news' %}
 
-    {% include 'core/author_sidebar.html' with type='news' %}
+      {% if news %}
+        <div>
+          {% for newsitem in news %}
+  
+          {% with type=newsitem.item_type.item_type %}
 
-    {% if news %}
-    <div>
-      {% for newsitem in news %}
-      {% with type=newsitem.item_type.item_type %}
+            {% if type == 'Print article' %}
+              <section class="info-item text-tight-spacing">
+                <h2 class="type-heading">{{type}}</h2>
 
-      {% if type == 'Print article' %}
-      <section class="info-item text-tight-spacing">
+                <p class="article">
+                  <a class="article-link" href="{{newsitem.article_link}}">
+                    {{newsitem.article}}
+                  </a>,
 
-        <h2 class="type-heading">{{type}}</h2>
-        <p class="article">
-          <a class="article-link" href="{{newsitem.article_link}}">
-            {{newsitem.article}}
-          </a>,
-          <a class="publisher-link" href="{{newsitem.publisher_link}}">
-            {{newsitem.publisher}}
-          </a>
-        </p>
-      </section>
+                  <a class="publisher-link" href="{{newsitem.publisher_link}}">
+                    {{newsitem.publisher}}
+                  </a>
+                </p>
 
-      {% elif type == 'Blog' or type == 'Youtube' %}
-      <section class="info-item text-tight-spacing">
+                <p>{{newsitem.description}}</p>
+              </section>
 
-        <h2 class="type-heading">{{type}}</h2>
-        <p>{{newsitem.description}}
-          <a class="host" href="{{newsitem.host_link}}">
-            {{newsitem.host_name}}
-          </a>
-        </p>
-      </section>
+            {% elif type == 'Blog' or type == 'Youtube' %}
+              <section class="info-item text-tight-spacing">
+                <h2 class="type-heading">{{type}}</h2>
 
-      {% elif type == 'Podcast' %}
-      <section class="info-item text-tight-spacing">
+                <a class="host" href="{{newsitem.host_link}}">
+                  {{newsitem.host_name}}
+                </a>
 
-        <h2 class="type-heading">{{type}}</h2>
-        <p>{{newsitem.description}}
-          <a class="host" href="{{newsitem.podcast_link}}">{{newsitem.podcast}}
-          </a>
-        </p>
-      </section>
+                <p>{{newsitem.description}}</p>
+              </section>
+
+              {% elif type == 'Podcast' %}
+                <section class="info-item text-tight-spacing">
+                  <h2 class="type-heading">{{type}}</h2>
+
+                  <a class="host" href="{{newsitem.podcast_link}}">{{newsitem.podcast}}
+                  </a>
+
+                  <p>{{newsitem.description}}</p>
+                </section>
+              {% endif %}
+            {% endwith %}
+          {% endfor %}
+        </div>
+
+      {% else %}
+
+      <p class="padded">There are no news items, check back soon for the latest news.</p>
 
       {% endif %}
-
-      {% endwith %}
-      {% endfor %}
     </div>
-
-    {% else %}
-
-    <p class="padded">There are no news items, check back soon for the latest news.</p>
-
-    {% endif %}
   </div>
-</div>
 {% endblock content %}
