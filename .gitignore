@@ -129,5 +129,6 @@ PrivateNotes.md
 sqldiff.exe
 sqlite3_analyzer.exe
 sqlite3.exe
+_productionenv
 _resources
 /staticfiles
