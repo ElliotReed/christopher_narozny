@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 django = "*"
+gunicorn = "*"
 python-decouple = "*"
 pillow = "*"
 whitenoise = "*"
@@ -13,4 +14,4 @@ mailchimp-marketing = "*"
 [dev-packages]
 
 [requires]
-python_version = "3.10"
+python_version = "3.12"
